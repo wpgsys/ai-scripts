@@ -16,6 +16,7 @@
 # What this script does:
 # - Installs and configures PHP 8.2 with Apache if not already installed
 # - Ensures Apache is configured to listen on port 8080
+# - Ensures index.php is included in the DirectoryIndex directive without duplication
 # - Fixes any malformed or duplicated configuration settings
 # - Safely restarts Apache to apply the changes
 # -----------------------------------------------------------------------------
@@ -90,6 +91,19 @@ fi
 if ! grep -q "^Listen $PORT" "$APACHE_CONF"; then
     echo "Error: Apache is not correctly configured to listen on port $PORT. Please check your configuration."
     exit 1
+fi
+
+# Add index.php to DirectoryIndex if not already present
+if grep -q "^DirectoryIndex" "$APACHE_CONF"; then
+    if ! grep -q "index.php" "$APACHE_CONF"; then
+        sed -i '' 's/^DirectoryIndex .*/& index.php/' "$APACHE_CONF"
+        echo "index.php added to DirectoryIndex in Apache configuration."
+    else
+        echo "index.php is already included in DirectoryIndex."
+    fi
+else
+    echo "DirectoryIndex index.php" >> "$APACHE_CONF"
+    echo "DirectoryIndex directive added with index.php."
 fi
 
 # Test the Apache configuration before restarting
