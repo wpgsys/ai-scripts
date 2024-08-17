@@ -104,3 +104,21 @@ git push origin feature-branch-name
 - **Pull Request**: Contributors are guided on how to create a pull request with a clear description.
 
 This section is designed to make it easy for anyone to contribute to your project while maintaining good practices.
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute the code in this repository, provided that you include appropriate credit, indicate any changes made, and do not hold the original author(s) liable for any claims.
+
+For more details, please refer to the [LICENSE](LICENSE) file.
+
+## Contact
+
+If you have any questions, suggestions, or feedback, please feel free to reach out:
+
+- **Email**: [ds@wpgsys.ca](mailto:ds@wpgsys.ca)
+- **GitHub Issues**: [Create an Issue](https://github.com/wpgsys/ai-scripts/issues)
+- **Twitter**: [@fr3nch1e_](https://twitter.com/fr3nch1e_)
+
+We appreciate your interest in this project and are always open to collaboration and contributions. Don’t hesitate to get in touch!
