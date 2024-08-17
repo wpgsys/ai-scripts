@@ -1,4 +1,5 @@
 #!/bin/bash
+#uTorrent Uninstaller For MacOS
 #To Run Enter The Commands Below
 #chmod +x uninstall_utorrent.sh
 #./uninstall_utorrent.sh
